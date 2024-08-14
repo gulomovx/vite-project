@@ -7,12 +7,37 @@ import laravel from '../assets/laravel.png'
 import node from '../assets/node.png'
 import vue from '../assets/vue.png'
 import net from '../assets/net.png'
+import group from '../assets/group.png'
+import Choose from './Choose.vue';
+import { ref } from 'vue';
+const vueIcon = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.76 226.69">
+  <polygon fill="#41b883" points="130.88 0 0 0 130.88 226.69 261.76 0 130.88 0"/>
+  <polygon fill="#35495e" points="130.88 35.41 47.99 181.28 130.88 181.28 213.77 181.28 130.88 35.41"/>
+  <polygon fill="#41b883" points="130.88 35.41 84.44 121.14 130.88 181.28 177.32 121.14 130.88 35.41"/>
+</svg>`;
+
+const cards = ref([
+  { title: 'Well documentation', icon: vueIcon },
+  { title: 'Live support', icon: vueIcon },
+  { title: 'Free resources', icon: vueIcon },
+  { title: 'Regular update', icon: vueIcon },
+  
+])
+
+
+
+
+
+
 </script>
 
 
 <template>
       <div class="w-full  bg-white flex justify-between flex-col z-20">
             <Navbar />
+            <img class="absolute -top-24  right-0 md:h-[700px] h-[370px] -z-10" :src="group" alt="">
+
             <div class="w-full h-screen md:mt-40 mt-12 ">
                   <div class=" flex flex-col md:flex-row justify-between items-center mx-auto max-w-[1420px]">
                         <!-- text, paragraph, search -->
@@ -29,18 +54,22 @@ import net from '../assets/net.png'
                                     </button>
                               </div>
                               </div>
-                              <img class="absolute top-0 right-0 md:h-[700px] h-[370px] -z-10" :src="elips" alt="">
 
                               <!-- framework images -->
-                        <div class="hidden md:block lg:flex">
+                        <!-- <div class="hidden md:block lg:flex">
                           <img :src="angular" alt="">
                           <img :src="laravel" alt="">
                           <img :src="node" alt="">
                           <img :src="vue" alt="">
                           <img :src="net" alt="">
-                        </div>
+                        </div> -->
 
                   </div>
             </div>
+      <Choose
+      v-for="(card, index) in cards" :key="index"
+      :title="card.title" 
+      :icon="card.icon"
+      />
       </div>
 </template>
