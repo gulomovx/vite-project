@@ -7,7 +7,7 @@ import Featured from './components/Featured.vue'
 </script>
 
 <template>
-  <div class="flex justify-between flex-col">
+  <div class="flex justify-between bg-white flex-col">
     <Header/>
      <Featured/>
     <!-- <Card/> -->

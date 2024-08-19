@@ -30,7 +30,7 @@ const cards = ref([
 
 
 <template>
-      <div :style="{backgroundImage:`url(${grou})`}" :class="`w-full bg-no-repeat    bg-white flex justify-between flex-col z-20`">
+      <div  :class="`w-full bg-no-repeat    bg-white flex justify-between flex-col z-20`">
             <Navbar />
 
             <!-- <img class="absolute -top-24  right-0 md:h-[700px] h-[370px] -z-10" :src="group" alt=""> -->
