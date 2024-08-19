@@ -1,29 +1,35 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 
-const products = ref(null);
+const products = ref([]);
 const loading = ref(true);
 const error = ref(null);
-const fallbackImage = 'https://via.placeholder.com/200?text=No+Image';
+const showAll = ref(false);
+
+const showAllProducts = () => {
+  showAll.value = true;
+};
+
+const displayedProducts = computed(() => {
+  return showAll.value ? products.value : products.value.slice(0, 3);
+});
 
 const fetchProducts = async () => {
       try {
             const response = await fetch('https://api.escuelajs.co/api/v1/products');
-
-            products.value = await response.json();
+            products.value = await response.json()
             console.log(products);
 
       } catch (err) {
             error.value = err.message;
-      } finally {
-            loading.value = false;
-      }
+      } 
       return {
             products,
             loading,
             error,
-            handleImageError
+            displayedProducts
+            
       };
 };
 
@@ -31,14 +37,11 @@ onMounted(() => {
       fetchProducts();
 });
 
-const handleImageError = (event) => {
-
-};
-console.log(products)
 </script>
 
 <template>
       <div class=" mt-[228px] bg-white w-full">
+
             <h1 class="font-bold text-center text-[39px] ">Featured Products</h1>
             <div
                   class="container  relative top-[99px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1  md:flex-row mx-auto justify-between   items-center gap-12">
@@ -49,8 +52,10 @@ console.log(products)
 
                         <img class="w-[280px]  h-[250px] object-cover    rounded-lg   hover:opacity-50 "
                               :src="item.category.image" alt="">
+
                          <!-- hover effect -->
-                         <div class="absolute h-full w-full bg-black/50 flex items-center justify-center gap-4 -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+
+                         <div class="absolute rounded-lg h-full w-full bg-black/50 flex items-center justify-center gap-4 -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
         <button class="border border-white rounded-lg text-white py-2 px-5">Preview</button>
         <a class="flex items-center hover:text-gray-200 bg-gradient-to-tr from-red-500 to-teal-500 rounded-lg p-2 text-white" href="#">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,11 +71,25 @@ console.log(products)
                         </div>
                          
                         <p class="font-medium mt-2">{{ item.title.substring(0, 20) }}...</p>
-                        <p class="">{{ item.price }}$</p>
+                        <div class="flex justify-between items-center my-4">
+                        <p class="font-semibold text-[22px]">{{ item.price }}$</p>
+                          <p class="text-slate-400">255 Sale</p>
+                        </div>
 
                   </div>
             </div>
 
-
+            
+      </div>
+      <div class="mx-auto">
+             <!-- Show All/Show Less Button -->
+    <div class="text-center mt-6">
+      <button 
+        v-if="products.length > 3" 
+        @click="showAll = !showAll" 
+        class="px-6 py-2 bg-blue-500 text-white rounded-lg">
+        {{ showAll ? 'Show Less' : 'View All' }}
+      </button>
+    </div>
       </div>
 </template>
