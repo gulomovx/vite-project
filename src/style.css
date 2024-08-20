@@ -7,3 +7,8 @@ body{
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+      .btn-bg {
+            @apply px-6 py-2 bg-gradient-to-tr from-red-700        to-blue-500 text-white rounded-lg
+      }
+    }

@@ -40,21 +40,21 @@ onMounted(() => {
 </script>
 
 <template>
-      <div class=" mt-[228px] bg-white w-full">
+      <div class=" mt-[228px] h-auto py-24 bg-slate-100 w-full ">
 
-            <h1 class="font-bold text-center text-[39px] ">Featured Products</h1>
+            <h1 class="font-bold text-center md:text-[39px] text-[30px]">Featured Products</h1>
             <div
                   class="container  relative top-[99px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1  md:flex-row mx-auto justify-between   items-center gap-12">
 
-                  <div v-for="item in products" key="item.id"
-                        class="w-fit relative   bg-cover bg-center   mx-auto border shadow-md rounded-lg p-4 ">
+                  <div v-for="item in displayedProducts" key="item.id"
+                        class="w-fit relative bg-white   bg-cover bg-center   mx-auto border shadow-md rounded-lg p-4 ">
                         <div class="group relative overflow-hidden">
 
-                        <img class="w-[280px]  h-[250px] object-cover    rounded-lg   hover:opacity-50 "
+                        <img class="w-[320px]  h-[220px] object-cover    rounded-lg   hover:opacity-50 "
                               :src="item.category.image" alt="">
 
                          <!-- hover effect -->
-
+                         
                          <div class="absolute rounded-lg h-full w-full bg-black/50 flex items-center justify-center gap-4 -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
         <button class="border border-white rounded-lg text-white py-2 px-5">Preview</button>
         <a class="flex items-center hover:text-gray-200 bg-gradient-to-tr from-red-500 to-teal-500 rounded-lg p-2 text-white" href="#">
@@ -79,17 +79,17 @@ onMounted(() => {
                   </div>
             </div>
 
-            
-      </div>
-      <div class="mx-auto">
+            <div class="mx-auto">
              <!-- Show All/Show Less Button -->
-    <div class="text-center mt-6">
+    <div class="text-center mt-32">
       <button 
         v-if="products.length > 3" 
         @click="showAll = !showAll" 
-        class="px-6 py-2 bg-blue-500 text-white rounded-lg">
-        {{ showAll ? 'Show Less' : 'View All' }}
+        class="px-6 py-2 bg-gradient-to-tr from-red-700 to-teal-500 text-white rounded-lg">
+        {{ showAll ? 'Show Less' : 'View All Products' }}
       </button>
     </div>
       </div>
+      </div>
+   
 </template>

@@ -1,16 +1,13 @@
 <script setup>
-import Navbar from './components/Navbar.vue'
 import Header from './components/Header.vue'
-import Choose from './components/Choose.vue'
-import Card from './components/Card.vue';
 import Featured from './components/Featured.vue'
+import CheckOut from './components/CheckOut.vue'
 </script>
 
 <template>
   <div class="flex justify-between bg-white flex-col">
     <Header/>
      <Featured/>
-    <!-- <Card/> -->
+     <CheckOut/>
   </div>
-  <!-- <Navbar/> -->
 </template>
