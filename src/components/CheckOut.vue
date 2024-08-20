@@ -17,7 +17,7 @@
           </li>
         </ul>
     
-        <div v-if="filteredProducts.length" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
+        <div v-if="filteredProducts.length" class="mt-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
           <div v-for="product in displayedProducts" :key="product.id" class="product-card mx-auto border rounded-lg p-4">
             <div class="group relative overflow-hidden">
               <img class="w-[320px] h-[220px] object-cover rounded-lg hover:opacity-50" :src="product.images[0]" alt="">

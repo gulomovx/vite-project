@@ -5,14 +5,13 @@ import { Icon } from '@iconify/vue';
 
 <template>
       <!-- component -->
-<!-- follow me on twitter @asad_codes -->
 
-<div class="w-full flex flex-wrap place-items-center mt-2  ">
-  <section class="relative mx-auto">
+<div class="w-full  place-items-center mt-2  ">
+  <section class="relative mx-auto container">
       <!-- navbar -->
-    <nav class="flex max-w-[1420px] mx-auto justify-between bg-white border  text- rounded-2xl text-slate-500 w-screen">
-      <div class="px-5 xl:px-8 py-4 flex w-full items-center ">
-        <h1 class="md:text-3xl text-[16px] font-bold font-heading" href="#">
+    <nav class="flex min-w-full  justify-between bg-white border  text- rounded-2xl text-slate-500 ">
+      <div class="px-5 xl:px-8 py-4 w-full flex  items-center ">
+        <h1 class="md:text-3xl text-[14px] font-bold font-heading" href="#">
           Digi Sell
         </h1>
         <div class="flex justify-between items-center md:ml-6 ml-4 gap-4 md:py-2 md:px-6 p-1 px-2 bg-gradient-to-tr from-red-500 to-teal-500 rounded-2xl text-white">

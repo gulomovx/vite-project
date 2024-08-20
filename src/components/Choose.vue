@@ -19,8 +19,8 @@ const data =ref([
 </script>
 
 <template>
-  <div class="top-[900px]">
-      <h1 class="text-center text-3xl top-2">Why Choose Us</h1>
+  <div class="md:mt-[300px] mt-36">
+      <h1 class="text-center text-3xl ">Why Choose Us</h1>
       <div class="container relative top-[99px] flex flex-col md:flex-row mx-auto justify-between   items-center gap-12">
 
 <div v-for="item in data" class="md:w-[200px] w-[400px] border  shadow-md flex flex-col gap-4 text-slate-700 hover:text-white hover:bg-gradient-to-tr from-red-500 to-teal-500 duration-300  px-4 py-2 rounded-xl">
