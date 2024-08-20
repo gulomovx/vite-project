@@ -1,7 +1,7 @@
 <template>
-      <div class="relative w-full container  mx-auto my-64 overflow-hidden">
+      <div class="relative w-full container  mx-auto mb-36 overflow-hidden">
         <!-- Feedbacks Wrapper -->
-        <h1 class="font-bold text-center md:text-[39px] text-[30px] my-16">Latest News</h1>
+        <h1 class="font-bold text-center md:text-[39px] text-[30px] md:my-16">Latest News</h1>
         <div 
           class="flex transition-transform duration-700 ease-in-out "
           :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
