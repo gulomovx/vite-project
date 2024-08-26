@@ -31,20 +31,17 @@ const cards = ref([
 
 <template>
       <div style="background-image: url('../assets/group.png')"   :class="`w-full  bg-white flex justify-between flex-col z-20`">
-            <Navbar />
+            <!-- <Navbar /> -->
             <!-- <img class="absolute top-0 hidden md:block  right-0 md:h-[700px] h-[370px] -z-10" :src="group" alt=""> -->
 
-            <div class="absolute hidden md:block md:top-[-60px] md:right-[-120px] top-[-100px] right-[-120px] w-[700px] h-[700px] md:w-[600px] md:h-[600px] bg-cover bg-no-repeat bg-right -z-10"
-         :style="{backgroundImage:`url(${group})`}">
-
-    </div>
+            <!-- <div class="absolute hidden md:block md:top-[-60px] md:right-[-120px] top-[-100px] right-[-120px] w-[700px] h-[700px] md:w-[600px] md:h-[600px] bg-cover bg-no-repeat bg-right -z-10" > </div> -->
             <!-- <img class="absolute top-0 hidden md:block  right-0 md:h-[700px] h-[370px] -z-10" :src="group" alt=""> -->
 
-            <div class="container h-scree md:mt-40 mt-12 ">
+            <div class="container h-screen md:mt-40 mt-12 ">
                   <div class="  flex flex-col md:flex-row justify-between items-center mx-auto max-w-[1420px]">
                         <!-- text, paragraph, search -->
                         <div class="md:w-[50%]">
-                              <h1 class="md:text-5xl text-3xl font-semibold tracking-widest">World Top <span class=" bg-clip-text bg-gradient-to-tr text-transparent  from-red-600 to-indigo-600">Themes,</span></h1>
+                              <h1 class="md:text-5xl text-3xl font-semibold tracking-widest text-my-color">World Top <span class=" bg-clip-text bg-gradient-to-tr text-transparent  from-red-600 to-indigo-600">Themes,</span></h1>
                               <br>
                               <h1 class="md:text-5xl text-3xl font-semibold tracking-widest"> <span class=" bg-clip-text bg-gradient-to-tr text-transparent  from-red-600 to-indigo-600">Plugins & Templates </span></h1>
                                <p class="mt-4 text-xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa cupiditate obcaecati ipsa eum asperiores odit quam aliquam assumenda quibusdam delectus.</p>

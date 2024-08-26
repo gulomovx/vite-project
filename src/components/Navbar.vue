@@ -1,71 +1,70 @@
 <script setup>
 import { Icon } from '@iconify/vue';
+import logo from '../assets/logo.png'
+import heart from '../assets/heart.png'
+import sign from '../assets/sign.png'
+import bag from '../assets/bag.png'
 </script>
 
 
 <template>
       <!-- component -->
 
-<div class="w-full  place-items-center mt-2  ">
-  <section class="relative mx-auto container">
+<div class="w-full  place-items-center relative top- bg-white  ">
+  <section class="relative mx-auto container mt-4">
       <!-- navbar -->
     <nav class="flex min-w-full  justify-between bg-white border  text- rounded-2xl text-slate-500 ">
-      <div class="px-5 xl:px-8 py-4 w-full flex  items-center ">
-        <h1 class="md:text-3xl text-[14px] font-bold font-heading" href="#">
-          Digi Sell
-        </h1>
-        <div class="flex justify-between items-center md:ml-6 ml-4 gap-4 md:py-2 md:px-6 p-1 px-2 bg-gradient-to-tr from-red-500 to-teal-500 rounded-2xl text-white">
+      <div class="px-5 xl:px-8 md:h-[100px] w-full flex  items-center ">
+        <router-link   to="/"      class="md:text-3xl text-[14px] font-bold font-heading" href="#">
+          
+          <img :src="logo" alt="">
+
+        </router-link> 
+        <div class="flex justify-between items-center md:ml-6 ml-4 gap-4 md:py-2 md:px-6 p-1 px-2 btn-bg rounded-2xl text-white">
             <Icon icon="icon-park-solid:all-application" />
             <h1 class="">Categories</h1>
             <Icon icon="teenyicons:down-solid" />
 
         </div>
         
-        <div class=" flex items-center px-4 mx-auto font-semibold font-heading space-x-12 bg-gradient-to-tr from-red-500 to-teal-500">
-            <i class=""></i>
+        <div class=" flex items-center px-4 mx-auto font-semibold font-heading space-x-12 ">
+            <!-- <i class=""></i> -->
         </div>
         <!-- Header Icons -->
         <div class="hidden xl:flex items-center space-x-5 ">
-          <a class="hover:text-gray-200 bg-gradient-to-tr from-red-500 to-teal-500 rounded-lg p-2 text-white" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </a>
-          <a class="flex items-center hover:text-gray-200 bg-gradient-to-tr from-red-500 to-teal-500 rounded-lg p-2 text-white" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            <span class="flex absolute -mt-5 ml-4 ">
-              <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75 "></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500 ">
-                </span>
-              </span>
-          </a>
-          <!-- Sign In / Register      -->
-          <a class="flex items-center hover:text-gray-200 bg-gradient-to-tr from-red-500 to-teal-500 rounded-lg p-2 text-white" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-          </a>
           
+          <img class="h-[50px] w-[50px] object-cover  z-10 cursor-pointer " :src="heart" alt="">
+           <!-- component -->
+<div class="h-[50px] w-[65px] btn-bg flex justify-center items-center">
+    <div class="relative  py-">
+  <div class="mt-[-4px] absolute left-3">
+    <p class="flex h-4 w-4 items-center justify-center rounded-full btn-bg border-[2px] border-white p-2 text-xs text-white">3</p>
+  </div>
+  <img class="h-[32px] w-[32px] object-cover   cursor-pointer " :src="bag" alt="">
+
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="file: mt-4 h-6 w-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+  </svg> -->
+</div>
+</div>
+          
+          <img class="h-[50px] w-[137px] object-cover  z-10 cursor-pointer " :src="sign" alt="">
+
         </div>
       </div>
       <!-- Responsive navbar -->
-      <a class="xl:hidden flex mr-6 items-center" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-        <span class="flex absolute -mt-5 ml-4">
-          <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
-          </span>
-        </span>
-      </a>
-      <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-      </a>
+      
+     
+      <div class="h-[30px] w-[35px] md:h-[30px] md:w-[45px] sm:block md:hidden mt-2 mr-6 btn-bg flex justify-center items-center">
+    <div class="relative">
+  <div class="mt-[-4px] absolute left-3">
+    <p class="flex h-4 w-4 items-center justify-center rounded-full btn-bg border-[2px] border-white p-2 text-xs text-white">3</p>
+  </div>
+  <img class="h-[25px] w-[22px]  md:h-[32px] md:w-[32px] object-cover    cursor-pointer " :src="bag" alt="">
+
+  
+</div>
+</div>
     </nav>
     
   </section>

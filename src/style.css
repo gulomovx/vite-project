@@ -1,14 +1,16 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-body{
+
+body {
       font-family: "Josefin Sans", sans-serif;
 
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
       .btn-bg {
-            @apply px-6 py-2 bg-gradient-to-tr from-red-700        to-blue-500 text-white rounded-lg
+            @apply px-6 py-2 bg-gradient-to-tr from-[#0283E9] to-[#FC01CA] text-white rounded-lg
       }
-    }
+}

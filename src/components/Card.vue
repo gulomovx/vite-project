@@ -30,15 +30,16 @@ onMounted(() => {
 
 <template>
     <div class="mt-10 bg-white w-full">
-      <h1 class="font-bold text-center text-3xl mb-8 bg-red-800">Featured Products</h1>
+      <h1 class="font-bold text-center text-3xl mb-8 bg-red-800">Featured Productsssss</h1>
       
       <!-- Products Grid -->
       <div class="container grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
         <div 
-          v-for="item in displayedProducts" 
+          v-for="item in products" 
           :key="item.id"
           class="relative bg-white border shadow-md rounded-lg p-4">
-          
+          <RouterLink :to="{ name: 'ProductDetail', params: { id: item.id } }">
+
           <div class="group relative overflow-hidden">
             <img 
               class="w-full h-64 object-cover rounded-lg" 
@@ -47,9 +48,11 @@ onMounted(() => {
             
             <!-- Hover effect -->
             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-              <button class="bg-white text-black py-2 px-4 rounded-lg">Preview</button>
+              <!-- <button class="bg-white text-black py-2 px-4 rounded-lg">Preview</button> -->
+              
             </div>
           </div>
+        </RouterLink>
           
           <p class="font-medium mt-2">{{ item.title.substring(0, 20) }}...</p>
           <div class="flex justify-between items-center my-4">
