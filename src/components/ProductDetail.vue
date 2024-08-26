@@ -7,9 +7,9 @@
         <p class="text-xl font-semibold">Price: {{ product.price }} USD</p>
       </div> -->
       <!-- product page -->
-      <div class="mt-12 container bg-white flex flex-col md:flex-row items-center justify-between ">
+      <div class=" container bg-white flex flex-col md:flex-row items-center justify-between ">
             <!-- img div -->
-             <div class="">
+             <div class="mt-12 ">
                   <img  :src="product.images?.[0]" alt="Product Image" class="w-[320px] h-[220px] md:w-[580px] md:h-[620px]  rounded-lg mb-4">
                   
              </div>
