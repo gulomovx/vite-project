@@ -1,5 +1,5 @@
 <template>
-      <div class="w-full container">
+      <div class="w-full container mt-[200px]">
         <h1 class="font-bold text-center md:text-[39px] text-[30px] my-16">Let’s Check Out News Product Theme Templates & Plugin</h1>
     
         <!-- Navbar-like category list -->

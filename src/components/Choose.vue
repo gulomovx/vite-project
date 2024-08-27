@@ -19,7 +19,7 @@ const data =ref([
 </script>
 
 <template>
-  <div class="md:mt-[300px] mt-36">
+  <div class="md:mt-[350px] mt-36">
       <h1 class="text-center text-3xl ">Why Choose Us</h1>
       <div class="container relative top-[99px] flex flex-col md:flex-row mx-auto justify-between   items-center gap-12">
 

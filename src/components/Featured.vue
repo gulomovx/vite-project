@@ -49,7 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-      <div class=" mt-[228px] h-auto py-24 bg-slate-100 w-full ">
+      <div class=" lg:mt-[700px] mt-[800px] h-auto py-24 bg-slate-100 w-full ">
 
             <h1 class="font-bold text-center md:text-[39px] text-[30px]">Featured Products</h1>
             <div

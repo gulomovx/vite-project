@@ -30,19 +30,26 @@ const cards = ref([
 
 
 <template>
-      <div style="background-image: url('../assets/group.png')"   :class="`w-full relative flex justify-between flex-col z-20`">
+      <div    :class="`w-full overflow--hidden bg-cover bg-no-repeat h-screen  relative flex justify-between flex-col z-`">
             <!-- <Navbar /> -->
             <!-- <img class="absolute top-0 hidden md:block  right-0 md:h-[700px] h-[370px] -z-10" :src="group" alt=""> -->
 
             <!-- <div class="absolute hidden md:block md:top-[-60px] md:right-[-120px] top-[-100px] right-[-120px] w-[700px] h-[700px] md:w-[600px] md:h-[600px] bg-cover bg-no-repeat bg-right -z-10" > </div> -->
             <!-- <img class="absolute top-0 hidden md:block  right-0 md:h-[700px] h-[370px] -z-10" :src="group" alt=""> -->
-           <!-- <div :style="{
-      backgroundImage: `url(${grou})`,
+            <!-- <div
+            class="absolute top-12 right-8 w-1/2 h-1/2 bg-[url('../assets/group.png')] bg-no-repeat bg-slate-00 bg-right-top"
+            >
+      
+      </div> -->
+         
+            <div class="container bg-slate-00 h-screen md:mt-40 mt-12 ">
+                  <div :style="{
+      backgroundImage: `url(${group})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '100vh',
-    }" class="w-full h-[400px] absolute top-0 -z-10 left-[140px]       "></div> -->
-            <div class="container bg-slate-00 h-screen md:mt-40 mt-12 ">
+      // height: '80vh',
+    }" class="w-full hidden lg:block max-w-[60vw] h-[900px]  absolute top-[-290px] right-[-190px] -z-10 ">
+    </div>
                   <div class="  flex flex-col md:flex-row justify-between items-center mx-auto max-w-[1420px]">
                         <!-- text, paragraph, search -->
                         <div class="md:w-[50%]">

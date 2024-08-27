@@ -18,9 +18,9 @@ console.log(cartStore.cartItems);
   <!-- component -->
 
   <div class="w-full   relative  ">
-    <section class="relative mx-auto container mt-4">
+    <section class="relative mx-auto container mt-4 ">
       <!-- navbar -->
-      <nav class="flex  justify-between items-center  border  text- rounded-2xl text-slate-500 h-[60px] md:h-[100px]">
+      <nav class="flex  justify-between items-center  border bg-white  text- rounded-2xl text-slate-500 h-[60px] md:h-[100px]">
         <div class="px-5 xl:px-8 b  w-full mx-auto flex  justify-center items-center ">
           <router-link to="/" class="md:text-3xl text-[14px] font-bold font-heading" href="#">
 
@@ -69,11 +69,11 @@ console.log(cartStore.cartItems);
 
 
         <div
-          class="h-[40px] w-[50px] mr-6 md:h-[30px] md:w-[45px] sm:block md:hidden  mr- btn-bg flex flex-row justify-center items-center">
+          class="h-[40px] w-[50px] mr-6 md:h-[30px] md:w-[45px] sm:block md:hidden  rounded-[5px] btn-bg flex flex-row justify-center items-center">
           <div class="relative flex ml-4  justify-center  flex-row-reverse">
             <div class="relative  ">
               <p
-                class="flex relative right-2 mt-[-6px] h-4 w-4 items-center justify-center rounded-full btn-bg border-[2px] border-white p-2 text-xs text-white">
+                class="flex relative right-2 mt-[-6px] h-4 w-4 items-center justify-center  btn-bg border-[2px] border-white p-2 text-xs text-white">
                 {{ cartStore.cartItems.length }}
               </p>
             </div>
