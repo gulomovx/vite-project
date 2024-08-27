@@ -1,76 +1,68 @@
-<script setup>
-import { ref, onMounted, computed } from 'vue';
-
-const products = ref([]);
-const loading = ref(true);
-const error = ref(null);
-const showAll = ref(false);
-
-const fetchProducts = async () => {
-  try {
-    const response = await fetch('https://api.escuelajs.co/api/v1/products');
-    products.value = await response.json();
-    console.log(products);
-  } catch (err) {
-    error.value = err.message;
-  } finally {
-    loading.value = false;
-  }
-};
-
-const displayedProducts = computed(() => {
-  return showAll.value ? products.value : products.value.slice(0, 3);
-});
-
-onMounted(() => {
-  fetchProducts();
-});
-</script>
-
-
+<!-- src/components/CartPage.vue -->
 <template>
-    <div class="mt-10 bg-white w-full">
-      <h1 class="font-bold text-center text-3xl mb-8 bg-red-800">Featured Productsssss</h1>
-      
-      <!-- Products Grid -->
-      <div class="container grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
-        <div 
-          v-for="item in products" 
-          :key="item.id"
-          class="relative bg-white border shadow-md rounded-lg p-4">
-          <RouterLink :to="{ name: 'ProductDetail', params: { id: item.id } }">
-
-          <div class="group relative overflow-hidden">
-            <img 
-              class="w-full h-64 object-cover rounded-lg" 
-              :src="item.category.image" 
-              alt="Product Image">
-            
-            <!-- Hover effect -->
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-              <!-- <button class="bg-white text-black py-2 px-4 rounded-lg">Preview</button> -->
-              
+  <div class="container mx-auto mt- p-4">
+    <!-- <h1 class="text-2xl font-bold mb-6">Your Cart</h1> -->
+    <div v-if="cartItems.length > 0" class="space-y-4">
+      <router-link to="/" class="text-xl" >
+        
+       Shopping continue
+      </router-link>
+      <hr>
+      <p class=""> You have {{ cartItems?.length }} item in cart</p>
+      <div v-for="item in cartItems" :key="item.id" class="flex items-center justify-between p-4 border rounded-lg shadow">
+        <div class="flex items-center">
+          <img :src="item?.images[0]" alt="" class="w-36 h-36 object-cover rounded-lg" />
+          <div class="ml-4">
+            <h2 class="text-[20px] font-semibold">{{ item.title.length>12 ? item.title.substring(0,12) : item.title}}</h2>
+            <p class="text-slate-600">{{ item.description?.substring(0, 20) }}...</p>
+            <p class="text-gray-600">{{ item.price*item.quantity }}$</p>
+            <div class="flex items-center mt-2">
+              <button @click="decrementQuantity(item.id)" class="px-2 py-1 bg-gray-300 rounded">-</button>
+              <span class="px-4">{{ item.quantity }}</span>
+              <button @click="incrementQuantity(item.id)" class="px-2 py-1 bg-gray-300 rounded">+</button>
             </div>
           </div>
-        </RouterLink>
-          
-          <p class="font-medium mt-2">{{ item.title.substring(0, 20) }}...</p>
-          <div class="flex justify-between items-center my-4">
-            <p class="font-semibold text-lg">{{ item.price }}$</p>
-            <p class="text-gray-500">255 Sales</p>
-          </div>
+        </div>
+        <div>
+          <button @click="removeItem(item.id)" class="text-red-500">Remove</button>
         </div>
       </div>
-      
-      <!-- Show All/Show Less Button -->
-      <div class="text-center mt-6">
-        <button 
-          v-if="products.length > 3" 
-          @click="showAll = !showAll" 
-          class="px-6 py-2 bg-blue-500 text-white rounded-lg">
-          {{ showAll ? 'Show Less' : 'View All' }}
-        </button>
+      <!-- <div class="mt-6 text-right">
+        <h2 class="text-xl font-bold">Total: {{ totalPrice }} USD</h2>
+        <button class="mt-2 px-6 py-2 bg-green-500 text-white rounded-lg">Checkout</button>
+      </div> -->
+    </div>
+    <div v-else class="text-center text-gray-600">
+      <p class="text-3xl mb-4">Your cart is empty.</p>
+      <div class="  ">
+        <RouterLink class="bg-slate-400  px-8 py-4 text-white btn-bg  mx-auto rounded-"  to="/">Back home</RouterLink>
+
       </div>
     </div>
-  </template>
-  
+  </div>
+</template>
+
+<script setup>
+
+
+
+
+import { computed } from 'vue';
+import { useCartStore } from '../stores/cart';
+
+const cartStore = useCartStore();
+const cartItems = computed(() => cartStore.cartItems);
+const totalPrice = computed(() => cartStore.totalPrice);
+
+const incrementQuantity = (productId) => {
+  cartStore.incrementQuantity(productId);
+};
+
+const decrementQuantity = (productId) => {
+  cartStore.decrementQuantity(productId);
+};
+
+const removeItem = (productId) => {
+  cartStore.removeItem(productId);
+};
+</script>

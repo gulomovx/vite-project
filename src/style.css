@@ -11,6 +11,6 @@ body {
 
 @layer components {
       .btn-bg {
-            @apply px-6 py-2 bg-gradient-to-tr from-[#0283E9] to-[#FC01CA] text-white rounded-lg
+            @apply  bg-gradient-to-tr from-[#0283E9] to-[#FC01CA] text-white rounded-lg
       }
 }

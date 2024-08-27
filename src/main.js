@@ -16,6 +16,9 @@ const routes=[
             path:'/contact', component:Contact
       },
       { path: '/item/:id', component: ProductDetail, name: 'ProductDetail' },
+      {
+            path:'/cart', component: Card
+      }
 
 ]
 const router = createRouter({

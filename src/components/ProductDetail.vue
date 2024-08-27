@@ -10,19 +10,19 @@
       <div class=" container bg-white flex flex-col md:flex-row items-center justify-between ">
             <!-- img div -->
              <div class="mt-12 ">
-                  <img  :src="product.images?.[0]" alt="Product Image" class="w-[320px] h-[220px] md:w-[580px] md:h-[620px]  rounded-lg mb-4">
+                  <img  :src="product?.images?.[0]" alt="Product Image" class="w-[320px] h-[220px] md:w-[580px] md:h-[620px]  rounded-lg mb-4">
                   
              </div>
              <!-- product data div -->
-              <div class="w-[700px]">
-                  <h1 class="md:text-[35px] text-[25px]  font-bold text-[#252C32]">{{ product?.title }}</h1>
+              <div class="md:w-[700px] text-center md:text-start">
+                  <h1 class="md:text-[35px] text-center md:text-start text-[20px]  font-bold text-[#252C32]">{{ product?.title }}</h1>
                   <!-- <p class=""></p> -->
-                  <p class="text-slate-500">{{ product.category?.name }}</p>
+                  <p class="text-slate-500">{{ product?.category?.name }}</p>
 
                   <p class="text-slate-700 mt-4">{{ product?.description?.slice(0, 200) }}...</p>
-                  <h1 class="text-[#252C32] text-[30px] font-semibold mt-4">${{ product?.price*quantity }}</h1>
+                  <h1 class="text-[#252C32] text-[30px] font-semibold mt-4">${{ product && product?.price*quantity }}</h1>
                   <!-- incr decr -->
-                  <div class="flex items-center gap-4">
+                  <div class="flex items-center justify-center md:justify-start gap-4">
                     <button @click="increment" class="w-[50px] text-xl bg-slate-400 rounded-lg ">+</button>
                     <h1 class="text-xl">{{ quantity }}</h1>
                     <button @click="decrement" class="w-[50px] text-xl bg-slate-400 rounded-lg">-</button>
@@ -54,15 +54,20 @@
     import { ref, onMounted } from 'vue';
     import { useRoute } from 'vue-router';
     import {useCartStore} from '../stores/cart'
-    const product = ref([]);
+    const product = ref(null);
     const route = useRoute();
     const quantity = ref(1);
-    const imageUrl = product.value.images?.[0];
+//     const imageUrl = product?.value.images?.[0];
     const cartStore = useCartStore();
+      console.log(product);
       
     const increment = () => {
   quantity.value++;
 };
+
+window.scrollBy(0, {
+      behaviour: 'smooth'
+})
 
 const decrement = () => {
   if (quantity.value > 1) {
@@ -72,6 +77,8 @@ const decrement = () => {
 
 const addToCart = () => {
   cartStore.addToCart({ ...product.value, quantity: quantity.value });
+  
+  
 };
 
     const fetchProduct = async () => {

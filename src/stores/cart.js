@@ -5,11 +5,14 @@ export const useCartStore = defineStore('cart', {
   state: () => ({
     cartItems: [],
   }),
+ 
   actions: {
     addToCart(product) {
       const existingProduct = this.cartItems.find(item => item.id === product.id);
       if (existingProduct) {
         existingProduct.quantity++;
+        console.log(this.cartItems.length);
+        
       } else {
         this.cartItems.push({ ...product, quantity: 1 });
       }
@@ -27,6 +30,9 @@ export const useCartStore = defineStore('cart', {
       } else {
         this.cartItems = this.cartItems.filter(item => item.id !== productId);
       }
+    },
+    removeItem(productId) {
+      this.cartItems = this.cartItems.filter(item => item.id !== productId);
     }
   }
 });
