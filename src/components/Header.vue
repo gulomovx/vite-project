@@ -36,12 +36,12 @@ const cards = ref([
 
             <!-- <div class="absolute hidden md:block md:top-[-60px] md:right-[-120px] top-[-100px] right-[-120px] w-[700px] h-[700px] md:w-[600px] md:h-[600px] bg-cover bg-no-repeat bg-right -z-10" > </div> -->
             <!-- <img class="absolute top-0 hidden md:block  right-0 md:h-[700px] h-[370px] -z-10" :src="group" alt=""> -->
-           <div :style="{
+           <!-- <div :style="{
       backgroundImage: `url(${grou})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      // height: '100vh',
-    }" class="w-full h-[400px] absolute top-0 -z-10 left-[140px]       "></div>
+      height: '100vh',
+    }" class="w-full h-[400px] absolute top-0 -z-10 left-[140px]       "></div> -->
             <div class="container bg-slate-00 h-screen md:mt-40 mt-12 ">
                   <div class="  flex flex-col md:flex-row justify-between items-center mx-auto max-w-[1420px]">
                         <!-- text, paragraph, search -->
