@@ -3,13 +3,13 @@
         <h1 class="font-bold text-center md:text-[39px] text-[30px] my-16">Let’s Check Out News Product Theme Templates & Plugin</h1>
     
         <!-- Navbar-like category list -->
-        <ul class="flex justify-between items-center md:my-8 border rounded-lg p-2 flex-wrap">
+        <ul class="flex justify-between items-center h-[80px] md:my-8 border rounded-lg p-2 flex-wrap">
           <li
             v-for="category in categories"
             :key="category"
             :class="[
-              'cursor-pointer px-4 py-2 rounded-lg my-2 md:my-0',
-              selectedCategory === category ? 'btn-bg' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              'cursor-pointer px-4 py-2 font-semibold rounded-[5px] shadow-[rgba(0, 0, 0, 0.1)] text-[20px] my-4 md:my-0',
+              selectedCategory === category ? 'btn-bg' : ' text-gray-700 '
             ]"
             @click="selectCategory(category)"
           >
@@ -17,9 +17,9 @@
           </li>
         </ul>
     
-        <div v-if="filteredProducts.length" class="mt-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
-          <div v-for="item in displayedProducts" :key="item.id" class="product-card mx-auto border rounded-lg p-4">
-            <div class="group relative overflow-hidden">
+        <div v-if="filteredProducts.length" class="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
+          <div v-for="item in displayedProducts" :key="item.id" class="product-card mx-auto border mt-8 md:mt-0 rounded-lg p-4">
+            <div class="group relative w-[310px] overflow-hidden">
               <img class="w-[320px] h-[220px] object-cover rounded-lg hover:opacity-50" :src="item.images?.[0]" alt="">
               <!-- Hover effect -->
               <div class="absolute rounded-lg h-full w-full bg-black/50 flex items-center justify-center gap-4 -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -39,11 +39,17 @@
                 </a>
               </div>
             </div>
-            <h3>{{ item.title.substring(0, 30) }}...</h3>
-            <p>{{ item.price }} USD</p>
+            <div class="mx-2">
+              <h3 class="text-[16px] mt-2 font-normal">{{ item.title.substring(0, 40) }}...</h3>
+              <div class="flex justify-between mt-8">
+              <p class="text-[25px]">${{ item.price }}</p>
+               <p class="text-slate-400">255 sale</p>
+              </div>
+            </div>
+            
           </div>
         </div>
-        <div v-else class="font-bold text-center md:text-[39px] text-[30px] my-16">
+        <div v-else class="font-bold text-center mt-24 md:text-[39px] text-[30px] my-16">
           No products available.
         </div>
     
@@ -72,7 +78,7 @@
     
     // Display either 8 products or all products based on `showAll` flag
     const displayedProducts = computed(() => {
-      return showAll.value ? filteredProducts.value : filteredProducts.value.slice(0, 8);
+      return showAll.value ? filteredProducts.value.slice(0,24) : filteredProducts.value.slice(0, 8);
     });
     
     const fetchProducts = async () => {

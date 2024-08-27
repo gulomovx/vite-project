@@ -21,7 +21,7 @@ const showAllProducts = () => {
 };
 
 const displayedProducts = computed(() => {
-  return showAll.value ? products.value : products.value.slice(0, 3);
+  return showAll.value ? products.value.slice(0,12) : products.value.slice(0, 3);
 });
 
 const fetchProducts = async () => {
@@ -56,11 +56,11 @@ onMounted(() => {
                   class="container  relative top-[99px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1  md:flex-row mx-auto justify-between   items-center gap-12">
 
                   <div v-for="item in displayedProducts" key="item.id"
-                        class="w-fit relative bg-white   bg-cover bg-center   mx-auto border shadow-md rounded-lg p-4 ">
+                        class="h-[405px] flex flex-col justify-between relative bg-white   bg-cover bg-center   mx-auto border shadow-md rounded-lg p-4 ">
 
                         <div class="group relative overflow-hidden">
 
-                        <img class="w-[320px]  h-[220px] object-cover    rounded-lg   hover:opacity-50 "
+                        <img class="w-[340px]  h-[247px] object-cover    rounded-lg   hover:opacity-50 "
                               :src="item.category.image" alt="">
 
                          <!-- hover effect -->
@@ -86,9 +86,9 @@ onMounted(() => {
 
                         </div>
                          
-                        <p class="font-medium mt-2">{{ item.title.substring(0, 20) }}...</p>
+                        <p class="font-medium mt-">{{ item.title.substring(0, 50) }}...</p>
                         <div class="flex justify-between items-center my-4">
-                        <p class="font-semibold text-[22px]">{{ item.price }}$</p>
+                        <p class="font-semibold text-[31px]">{{ item.price }}$</p>
                           <p class="text-slate-400">255 Sale</p>
                         </div>
 

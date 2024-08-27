@@ -15,7 +15,7 @@
             <div 
               v-for="(feedback, index) in chunk"
               :key="index"
-              class="w-full p-8 "
+              class="w-full p-8 mb-4 "
             >
               <div class="bg-white shadow-lg rounded-lg p-4 h-[200px]">
                 <p class="text-lg italic mb-4">"{{ feedback.message }}"</p>
@@ -26,13 +26,13 @@
         </div>
     
         <!-- Navigation Dots -->
-        <div class="absolute  bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div class="absolute mt-4   bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           <button 
             v-for="(chunk, chunkIndex) in chunkedFeedbacks" 
             :key="chunkIndex"
             :class="[
-              'w-3 h-3 rounded-full ',
-              currentIndex === chunkIndex ? 'bg-blue-500' : 'bg-gray-400'
+              'w-2 h-2 rounded-full border-btn-bg  border-[4px] p-2 ',
+              currentIndex === chunkIndex ? 'btn-bg' : 'bg-slate-800'
             ]"
             @click="currentIndex = chunkIndex"
           ></button>
