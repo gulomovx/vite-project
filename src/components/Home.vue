@@ -5,6 +5,7 @@ import Header from './Header.vue';
 import Carousel from './Carousel.vue';
      import News from './News.vue';
      import Card from './Card.vue';
+     import Contact from './Contact.vue';
  components :{
       Header,
       // Featured,
@@ -12,6 +13,7 @@ import Carousel from './Carousel.vue';
       CheckOut,
       Carousel,
       News
+
  }
 </script>
 

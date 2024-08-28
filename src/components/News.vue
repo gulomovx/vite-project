@@ -10,31 +10,42 @@
           <div 
             v-for="(chunk, chunkIndex) in chunkedFeedbacks"
             :key="chunkIndex"
-            class="flex flex-col md:flex-row  min-w-full"
+            class="flex flex-col md:flex-row  min-w-full mb-8"
           >
             <div 
               v-for="(feedback, index) in chunk"
               :key="index"
-              class="w-full p-8 flex flex-col md:flow-row justify-between  "
+              class="w-full p-8 flex flex-col md:flow-row  justify-between  "
             >
-              <div class="bg-white border shadow-lg rounded-lg p-4 h-[400px]">
+              <div class="bg-white border shadow-lg rounded-lg p-4 h-[400px] ">
                   <img class="mx-auto w-full" :src="feedback.img" alt="news">
-                
-                  <p class="text-lg italic ">"{{ feedback.message }}"</p>
-                <h4 class="text-xl font-bold">{{ feedback.author }}</h4>
+                  <!-- date & author -->
+                <div class=" w-full flex text-[16px] mt-2 justify-between">
+                 <div class="flex ">
+                  <img class="size-[18px]" :src="clock" alt="">
+                   <p class="text-slate-500">05, July, 2024</p>
+                 </div>
+
+                 <div class="flex">
+                  <img class="size-[18px]" :src="author" alt="">
+                   <p class="text-slate-500">Cristofer Westervelt</p>
+                 </div>
+                </div>
+                  <p class="text-[20px] font-semibold mt-6 ">"{{ feedback.message }}"</p>
+                <!-- <h4 class="text-xl font-bold">{{ feedback.author }}</h4> -->
               </div>
             </div>
           </div>
         </div>
     
         <!-- Navigation Dots -->
-        <div class="absolute  bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div class="absolute   bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           <button 
             v-for="(chunk, chunkIndex) in chunkedFeedbacks" 
             :key="chunkIndex"
             :class="[
-              'w-3 h-3 rounded-full ',
-              currentIndex === chunkIndex ? 'bg-blue-500' : 'bg-gray-400'
+              'w-3 h-3 rounded-full p-2',
+              currentIndex === chunkIndex ? 'btn-bg' : 'bg-slate-900'
             ]"
             @click="currentIndex = chunkIndex"
           ></button>
@@ -50,6 +61,8 @@
     <script setup>
     import { ref, computed } from 'vue';
     import news from '../../public/news.png'
+    import author from '../assets/user.svg'
+    import clock from '../assets/clock.svg'
     const feedbacks = ref([
       { author: 'John Doe', message: 'This product has completely transformed our business!', time:'05, July, 2024', img:news },
       { author: 'Jane Smith', message: 'Excellent customer service and very reliable product.', time:'05, July, 2024', img:news },

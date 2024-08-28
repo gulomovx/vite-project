@@ -7,14 +7,14 @@ const categories = ref(['All', 'Clothes', 'Electronics', 'Furniture', 'Shoes', '
       <div class="w-full ">
             <div class=" p-8 text-white bg-slate-600 flex gap-4 justify-center items-center mx-auto">
                   <!-- <input type="text"> -->
-                  <p class="">Newsletters</p>
-                  <div class="flex items-center border rounded-lg overflow-hidden  max-w-lg">
+                  <p class="text-[25px]">Newsletters</p>
+                  <div class="flex items-center border rounded-[2px] overflow-hidden h-[72px] bg-white  w-[380px]">
                         <!-- Input Field -->
                         <input type="text" v-model="inputValue" placeholder="Type your message..."
                               class="w-full py-2 px-4 outline-none text-slate-500" />
 
                         <!-- Telegram Send Button -->
-                        <button @click="sendMessage" class="btn-bg text-white p-2 flex items-center justify-center">
+                        <button @click="sendMessage" class="btn-bg text-white p-2 mr-2 flex items-center justify-center">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
                                     viewBox="0 0 24 24" stroke="none">
                                     <path
@@ -24,10 +24,10 @@ const categories = ref(['All', 'Clothes', 'Electronics', 'Furniture', 'Shoes', '
                   </div>
             </div>
             <div  class="bg-slate-900 w-full text-center  p-8  ">
-              <ul class="flex flex-col md:flex-row  my-8  gap-8 md:gap-16 justify-center">
+              <ul class="flex flex-col md:flex-row  my-12  gap-8 md:gap-16 justify-center">
                   <li class="text-white text-[16px] " v-for="item in categories">{{ item }}</li>
               </ul>
-              <p class="text-white">&copy;2021 JS Template. Designd By Ojjomedia All Rights Reserved</p>
+              <p class="text-white">&copy;2024 JS Template. Designd By Ojjomedia All Rights Reserved</p>
             </div>
       </div>
 </template>
