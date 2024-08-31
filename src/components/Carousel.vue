@@ -15,7 +15,7 @@
         <div
           v-for="(feedback, index) in chunk"
           :key="index"
-          class="w-full p-8 mb-4"
+          class="w-full p-8 mb-8"
         >
           <div class="bg-white w-full text-center p-4 h-[200px]">
             <img :src="double" class="mx-auto mb-6" alt="" />

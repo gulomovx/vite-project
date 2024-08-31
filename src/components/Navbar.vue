@@ -21,7 +21,7 @@ console.log(cartStore.cartItems);
     <section class="relative mx-auto container mt-4 ">
       <!-- navbar -->
       <nav class="flex  justify-between items-center  border bg-white  text- rounded-2xl text-slate-500 h-[60px] md:h-[100px]">
-        <div class="px-5 xl:px-8 b  w-full mx-auto flex  justify-center items-center ">
+        <div class="px- xl:px-8 b  w-full mx-auto flex  justify-center items-center ">
           <router-link to="/" class="md:text-3xl text-[14px] font-bold font-heading" href="#">
 
             <img :src="logo" alt="">
