@@ -9,8 +9,8 @@
       <!-- product page -->
       <div class=" container bg-white flex flex-col md:flex-row items-center justify-between ">
             <!-- img div -->
-             <div class="mt-12 ">
-                  <img  :src="product?.images?.[0]" alt="Product Image" class="w-[320px] h-[220px] md:w-[580px] md:h-[620px]  rounded-lg mb-4">
+             <div class="mt-4 md:mt-12 ">
+                  <img  :src="product?.images?.[0]" alt="Product Image" class="w-[380px] h-[280px] md:w-[580px] md:h-[520px]  rounded-lg mb-4">
                   
              </div>
              <!-- product data div -->
@@ -29,7 +29,7 @@
 
                   </div>
                   <!-- add to cart btn -->
-                   <button @click="addToCart" class="w-[200px] py-2 mt-8 rounded-xl text-white bg-blue-500">Add to card</button>
+                   <button @click="addToCart" class="w-[200px] py-2 mt-8 rounded-xl text-white btn-bg">Add to card</button>
               </div>
       </div>
 
