@@ -54,12 +54,15 @@
     import { ref, onMounted } from 'vue';
     import { useRoute } from 'vue-router';
     import {useCartStore} from '../stores/cart'
+    import 'vue3-toastify/dist/index.css'
+    import {toast} from 'vue3-toastify'
     const product = ref(null);
     const route = useRoute();
     const quantity = ref(1);
-//     const imageUrl = product?.value.images?.[0];
     const cartStore = useCartStore();
-      console.log(product);
+    
+    // toast
+   
       
     const increment = () => {
   quantity.value++;
@@ -76,6 +79,9 @@ const decrement = () => {
 };
 
 const addToCart = () => {
+  toast('Item added to cart',{
+        autoClose:2000
+      })
   cartStore.addToCart({ ...product.value, quantity: quantity.value });
   
   
